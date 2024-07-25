@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+    
+            
+            
+<body>
+    <div class="menu">
+        <button class="menu-button" aria-label="Toggle navigation menu" onclick="toggleMenu(this)">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <nav class="nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="https://emus4ios.github.io">My GitHub</a></li>
+                <li><a href="contactme.html">CSS Basics</a></li>
+                <li><a href="proj-1.html">What is CSS</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+<section class="hero">
+                <h2>Project CFSW</h2>
+                </section>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+            
+                <div class="card">
+                    <h3>Everything about Flexbox</h3>
+                    <p>Learn how to create flexible and responsive layouts using CSS Flexbox.</p>
+                    <p class="read-more-content">
+                    
+                    
+                    
+                    
+                    
+                    Flexbox, short for "Flexible Box Layout," is a CSS3 web layout model that allows developers to design complex layouts more efficiently and predictably. Introduced to make the process of creating responsive web designs easier, flexbox enables the positioning and alignment of elements within a container to be dynamically adjusted.
+
+ Key Features of Flexbox:
+
+1. **Direction Control**: Flexbox allows you to change the direction in which items are laid out, whether horizontally or vertically. This is controlled by the `flex-direction` property.
+<br>
+<br>
+2. **Alignment and Justification**: You can easily align and distribute space among items within a container. The `justify-content`, `align-items`, and `align-content` properties help in managing horizontal and vertical alignment.
+<br>
+<br>
+3. **Order and Flexibility**: Items within a flex container can change order, grow, shrink, and be resized according to the available space. The `order`, `flex-grow`, `flex-shrink`, and `flex-basis` properties control these behaviors.
+<br>
+<br>
+4. **Flex Container and Flex Items**: Flexbox works by designating a container as a flex container with the `display: flex` property. All direct children of this container become flex items.
+
+
+
+To create a flex container:
+css
+.container {
+  display: flex;
+}
+`
+<br>
+<br>
+To control the direction of the layout:
+css
+.container {
+  flex-direction: row; /* Default: Items are laid out in a row */
+  flex-direction: column; /* Items are laid out in a column */
+}
+<br>
+<br>
+To distribute space between items:
+css
+.container {
+  justify-content: space-between; /* Distributes items evenly, with the first item at the start and the last item at the end */
+  justify-content: center; /* Centers items along the main axis */
+}
+<br>
+<br>
+
+To align items along the cross axis:
+<br>
+<br>
+css
+.container {
+  align-items: center; /* Centers items along the cross axis */
+  align-items: stretch; /* Stretches items to fill the container */
+}
+<br>
+<br>
+
+To control the size and growth of items:
+
+css
+
+<br> 
+<br>
+.item {
+  flex-grow: 1; /* Allows the item to grow and fill available space */
+  flex-shrink: 1; /* Allows the item to shrink if necessary */
+  flex-basis: 100px; /* Sets the initial size of the item */
+}
+
+<br>
+<br>
+ Example:
+html
+<!-- <div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div> -->
+
+css
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+.item {
+  flex: 1;
+  margin: 10px;
+}
+
+
+In this example, the container uses flexbox to arrange its children (`.item`) with equal space around them, centered along the cross axis.
+
+Flexbox simplifies creating responsive and dynamic layouts, making it a powerful tool for modern web design.
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </p>
+                    <button class="read-more-button" onclick="readMore(this)">Learn</button>
+                </div>
+                <div class="card">
+                    <h3>JavaScript ES6 Features</h3>
+                    <p>Explore the new features introduced in JavaScript ES6 and how they can improve your code.</p>
+                    <p class="read-more-content">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+              
+                    
+                    
+                here is an in-depth explanation of ES6 
+                
+                
+
+ ECMAScript 6 (ES6) Overview
+
+ECMAScript 6 (ES6), also known as ECMAScript 2015, is a significant update to JavaScript, introducing many new features that make the language more powerful and easier to use.
+
+ Key Features 
+ 
+ 
+ of ES6:
+<br>
+1.
+ **Block-Scoped Variables**: 
+   - **`let`**: Declares variables that are limited in scope to the block, statement, or expression where they are used.
+   - **`const`**: Declares read-only named constants, which are block-scoped as well.
+
+   ```javascript
+   let x = 10;
+   const y = 20;
+   ```
+<br>
+
+<br>
+2. **Arrow Functions**: 
+   - Provides a concise way to write functions using the `=>` syntax. They inherit the `this` value from their enclosing context.
+
+   javascript
+   const add = (a, b) => a + b;
+   
+<br>
+<br>
+3. **Classes**: 
+   - Introduces a class-based syntax for object-oriented programming, including constructors and methods.
+
+   javascript
+   class Person {
+     constructor(name) {
+       this.name = name;
+     }
+
+     greet() {
+       return `Hello, ${this.name}`;
+     }
+   }
+
+   const john = new Person('John');
+   console.log(john.greet()); // Hello, John
+   
+<br>
+<br>
+4. **Template Literals**: 
+   - Allows embedding expressions inside string literals using backticks (`` ` ``) and `${}` syntax.
+<br>
+<br>
+   javascript
+   const name = 'John';
+   const message = `Hello, ${name}!`;
+   
+<br>
+<br>
+5. **Destructuring Assignment**: 
+   - Simplifies extracting values from arrays or properties from objects into distinct variables.
+
+   javascript
+   // Array Destructuring
+   const [a, b] = [1, 2];
+   
+   // Object Destructuring
+   const {name, age} = {name: 'John', age: 30};
+   <br>
+<br>
+6. **Default Parameters**: 
+   - Allows setting default values for function parameters.
+<br>
+   javascript
+   function greet(name = 'Guest') {
+     return `Hello, ${name}`;
+   }
+   
+<br>
+<br>
+7. **Rest and Spread Operators**: 
+   - **Rest**: Collects all remaining elements into an array.
+   - **Spread**: Expands an array or object into individual elements.
+
+  javascript
+   // Rest
+   function sum(...numbers) {
+     return numbers.reduce((acc, num) => acc + num, 0);
+   }
+
+   // Spread
+   const arr = [1, 2, 3];
+   const newArr = [...arr, 4, 5];
+   
+<br>
+<br>
+8. **Modules**: 
+   - Introduces a standardized module system, allowing the import and export of modules.
+
+   javascript
+   // Exporting a module
+   export const pi = 3.14;
+
+   // Importing a module
+   import {pi} from './math';
+   ```<br>
+<br>
+9. **Promises**: 
+   - Provides a way to handle asynchronous operations, making it easier to work with asynchronous code.
+
+   javascript
+   const promise = new Promise((resolve, reject) => {
+     // asynchronous operation
+     if (success) {
+       resolve('Operation succeeded');
+     } else {
+       reject('Operation failed');
+     }
+   });
+
+   promise.then(response => console.log(response)).catch(error => console.error(error));
+   
+<br>
+<br>
+10. **Enhanced Object Literals**: 
+    - Allows for more concise object creation, including shorthand property names, method definitions, and computed property names.
+
+    javascript
+    const name = 'John';
+    const person = {
+      name,
+      greet() {
+        return `Hello, ${this.name}`;
+      },
+      ['age' + 1]: 30
+    };
+    
+
+ Example:
+Here is an example that incorporates several ES6 features:
+
+javascript
+class Animal {
+  constructor(name, species) {
+    this.name = name;
+    this.species = species;
+  }
+
+  getInfo() {
+    return `${this.name} is a ${this.species}`;
+  }
+}
+
+const dog = new Animal('Rex', 'dog');
+
+const animals = ['cat', 'dog', 'bird'];
+const newAnimals = [...animals, 'fish'];
+
+const showAnimals = (first, ...rest) => {
+  console.log(`First: ${first}`);
+  console.log(`Rest: ${rest.join(', ')}`);
+};
+
+showAnimals(...newAnimals);
+
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Data fetched'), 2000);
+  });
+};
+
+fetchData().then(data => console.log(data));
+```
+
+In this example, ES6 features such as classes, spread/rest operators, template literals, and promises are utilized to create a simple yet powerful script.    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </p>
+                    <button class="read-more-button" onclick="readMore(this)">Learn</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Web Dev Hub. All rights reserved. created by web developers for web developers</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(button) {
+            button.classList.toggle("change");
+            document.querySelector('.nav').classList.toggle('show');
+        }
+
+        function readMore(button) {
+            const content = button.previousElementSibling;
+            content.classList.toggle('show-more');
+            if (content.classList.contains('show-more')) {
+                button.textContent = 'Read Less';
+            } else {
+                button.textContent = 'Read More';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+<style>
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.hero {
+
+    text-align: center;
+    
+    animation-name: fadein2;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation-name: fadein;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+.card h3 {
+    margin: 0 0 0.5rem;
+}
+
+.card p {
+    margin: 0 0 1rem;
+}
+
+.card a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+    height: 130px;
+    margin-top: 60px;
+}
+
+.read-more-content {
+    display: none;
+    margin-top: 1rem;
+    
+}
+
+.read-more-content.show-more {
+    display: block;
+    
+}
+
+.menu {
+    background-color: black;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    margin-top: -10px;
+    width: 370px;
+    margin-left: -20px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30px;
+}
+
+.bar {
+    width: 37px;
+    height: 6px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+.change .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: black;
+    padding: 20px;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav ul li {
+    margin: 10px 0;
+    font-family: sans-serif;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.nav.show {
+    display: inline-block;
+    
+}
+
+@media (max-width: 1080px) {
+    .nav ul {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 700px) {
+    .nav {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .nav ul {
+        flex-direction: row;
+    }
+
+    .nav ul li {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    
+    .menu{width:750px;}
+}
+
+
+button{
+
+color: black;
+background-color:#f4f4f4;
+border: 1px solid black;
+height: 40px;
+width: 160px;}
+
+button:hover{
+background-color: black;
+ color: white;
+}
+
+
+
+@keyframes fadein {
+    0% {
+        transform: translateX(-800px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadein2 {
+    0% {
+        transform: translateX(-800px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+</style>
+
+
