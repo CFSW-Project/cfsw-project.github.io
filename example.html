@@ -18,6 +18,7 @@
             color: white;
             padding: 10px;
             text-align: center;
+            width: 500px;
         }
         main {
             flex: 1;
@@ -34,19 +35,86 @@
             border-radius: 8px;
             text-align: center;
         }
+        
+        
+        body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: gray;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
     </style>
 </head>
 <body>
     <header>
         <h1>basic-flex-box-example</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+</body>
+</html>
     </header>
     <main>
         <div class="box">
             Main Content
         </div>
+        
+        <div class="container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+    </div>
     </main>
+    
+    
     <footer>
         <p>Footer</p>
     </footer>
 </body>
 </html>
+
+
+
