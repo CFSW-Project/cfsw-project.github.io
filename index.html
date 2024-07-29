@@ -1,15 +1,20 @@
+  
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Document Title</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
-    
-            
+<body>
+    <!-- Your HTML content goes here -->
+        <script src="script.js"></script>
+</body>
+</html>
             
 <body>
     <div class="menu">
@@ -368,265 +373,8 @@ In this example, ES6 features such as classes, spread/rest operators, template l
         </div>
     </footer>
 
-    <script>
-        function toggleMenu(button) {
-            button.classList.toggle("change");
-            document.querySelector('.nav').classList.toggle('show');
-        }
-
-        function readMore(button) {
-            const content = button.previousElementSibling;
-            content.classList.toggle('show-more');
-            if (content.classList.contains('show-more')) {
-                button.textContent = 'Read Less';
-            } else {
-                button.textContent = 'Read More';
-            }
-        }
-    </script>
+    
 </body>
 </html>
-
-
-<style>
-/* Reset some default styles */
-body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-header h1 {
-    margin: 0;
-}
-
-main {
-    padding: 2rem 0;
-}
-
-.hero {
-
-    text-align: center;
-    
-    animation-name: fadein2;
-    animation-play-state: running;
-    animation-iteration-count: 1;
-    animation-duration: 0.5s;
-}
-
-.card {
-    background: #f1f1f1;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation-name: fadein;
-    animation-play-state: running;
-    animation-iteration-count: 1;
-    animation-duration: 2s;
-}
-
-.card h3 {
-    margin: 0 0 0.5rem;
-}
-
-.card p {
-    margin: 0 0 1rem;
-}
-
-.card a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-footer .container {
-    width: 80%;
-    margin: 0 auto;
-    height: 130px;
-    margin-top: 60px;
-}
-
-.read-more-content {
-    display: none;
-    margin-top: 1rem;
-    
-}
-
-.read-more-content.show-more {
-    display: block;
-    
-}
-
-.menu {
-    background-color: black;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    position: relative;
-    margin-top: -10px;
-    width: 370px;
-    margin-left: -20px;
-}
-
-.menu-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: -30px;
-}
-
-.bar {
-    width: 37px;
-    height: 6px;
-    background-color: white;
-    margin: 3px 0;
-    transition: 0.4s;
-}
-
-.change .bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-}
-
-.change .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.change .bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-}
-
-.nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background-color: black;
-    padding: 20px;
-}
-
-.nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav ul li {
-    margin: 10px 0;
-    font-family: sans-serif;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-}
-
-.nav.show {
-    display: inline-block;
-    
-}
-
-@media (max-width: 1080px) {
-    .nav ul {
-        flex-direction: column;
-    }
-}
-
-@media (min-width: 700px) {
-    .nav {
-        display: flex;
-        position: static;
-        background-color: transparent;
-        padding: 0;
-    }
-
-    .nav ul {
-        flex-direction: row;
-    }
-
-    .nav ul li {
-        margin-right: 20px;
-        margin-bottom: 0;
-    }
-    
-    .menu{width:750px;}
-}
-
-
-button{
-
-color: black;
-background-color:#f4f4f4;
-border: 1px solid black;
-height: 40px;
-width: 160px;}
-
-button:hover{
-background-color: black;
- color: white;
-}
-
-
-
-@keyframes fadein {
-    0% {
-        transform: translateX(-800px);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-
-@keyframes fadein2 {
-    0% {
-        transform: translateX(-800px);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-
-</style>
 
 
