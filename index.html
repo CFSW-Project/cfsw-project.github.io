@@ -1,386 +1,75 @@
+ <link rel="stylesheet" href="style.css">
+ 
+
+ <ul class="nav">
+ <li class="item"> <a href="https://github.com/CFSW-Project/csfw.gitHub.io">git repo</a>
+ </li>
+  <li class="item"><a href="https://github.com/CFSW-Project">my Github</a>
+  </li>
+   <li class="item"><a href="aboutme.html">About  OSP
+   </a>
+   </li>
+    <li class="item"><a href="https://github.com/CFSW-Project?tab=repositories">other  Projects</a> </li>
   
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project CSFW</title>
+   </ul>
+   
+    <h1 class="logo"> OverSimplified</h1>
     
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
     
-        <script src="script.js"></script>
-</body>
-</html>
-
-
-
-
-
-            
-<body>
-    <div class="menu">
-        <button class="menu-button" aria-label="Toggle navigation menu" onclick="toggleMenu(this)">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </button>
-        <nav class="nav" aria-label="Main navigation">
-            <ul>
-                <li><a href="https://github.com/CFSW-Project">My GitHub</a></li>
-                <li><a href="contactme.html"> Contact me</a></li>
-                <li><a href="basicCSS.html">basics of CSS3</a></li>
-            </ul>
-        </nav>
-    </div>
-
-
-<section class="hero">
-                <h2>Project CFSW</h2>
-                </section>
-
-    <main>
-        
-            <section class="hero">
-            
-                <div class="card">
-                
-                    <h3>Everything about Flexbox</h3>
-                    <p>Learn how to create flexible and responsive layouts using CSS Flexbox.</p>
-                    <p class="read-more-content">
-                    
-                    
-                    
-                    
-                    
-                    Flexbox, short for "Flexible Box Layout," is a CSS3 web layout model that allows developers to design complex layouts more efficiently and predictably. Introduced to make the process of creating responsive web designs easier, flexbox enables the positioning and alignment of elements within a container to be dynamically adjusted.
-
- Key Features of Flexbox:
-
-1. **Direction Control**: Flexbox allows you to change the direction in which items are laid out, whether horizontally or vertically. This is controlled by the `flex-direction` property.
-<br>
-<br>
-2. **Alignment and Justification**: You can easily align and distribute space among items within a container. The `justify-content`, `align-items`, and `align-content` properties help in managing horizontal and vertical alignment.
-<br>
-<br>
-3. **Order and Flexibility**: Items within a flex container can change order, grow, shrink, and be resized according to the available space. The `order`, `flex-grow`, `flex-shrink`, and `flex-basis` properties control these behaviors.
-<br>
-<br>
-4. **Flex Container and Flex Items**: Flexbox works by designating a container as a flex container with the `display: flex` property. All direct children of this container become flex items.
-
-
-
-To create a flex container:
-css
-.container {
-  display: flex;
-}
-`
-<br>
-<br>
-To control the direction of the layout:
-css
-.container {
-  flex-direction: row; /* Default: Items are laid out in a row */
-  flex-direction: column; /* Items are laid out in a column */
-}
-<br>
-<br>
-To distribute space between items:
-css
-.container {
-  justify-content: space-between; /* Distributes items evenly, with the first item at the start and the last item at the end */
-  justify-content: center; /* Centers items along the main axis */
-}
-<br>
-<br>
-
-To align items along the cross axis:
-<br>
-<br>
-css
-.container {
-  align-items: center; /* Centers items along the cross axis */
-  align-items: stretch; /* Stretches items to fill the container */
-}
-<br>
-<br>
-
-To control the size and growth of items:
-
-css
-
-<br> 
-<br>
-.item {
-  flex-grow: 1; /* Allows the item to grow and fill available space */
-  flex-shrink: 1; /* Allows the item to shrink if necessary */
-  flex-basis: 100px; /* Sets the initial size of the item */
-}
-
-<br>
-<br>
- Example:
-html
-<!-- <div class="container">
-  <div class="item">1</div>
-  <div class="item">2</div>
-  <div class="item">3</div>
-</div> -->
-
-css
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-}
-.item {
-  flex: 1;
-  margin: 10px;
-}
-
-
-In this example, the container uses flexbox to arrange its children (`.item`) with equal space around them, centered along the cross axis.
-
-Flexbox simplifies creating responsive and dynamic layouts, making it a powerful tool for modern web design.
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    </p>
-                    <button class="read-more-button" onclick="readMore(this)">Learn</button>
-                </div>
-                <div class="card">
-                    <h3>JavaScript ES6 Features</h3>
-                    <p>Explore the new features introduced in JavaScript ES6 and how they can improve your code.</p>
-                    <p class="read-more-content">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-              
-                    
-                    
-                here is an in-depth explanation of ES6 
-                
-                
-
- ECMAScript 6 (ES6) Overview
-
-ECMAScript 6 (ES6), also known as ECMAScript 2015, is a significant update to JavaScript, introducing many new features that make the language more powerful and easier to use.
-
- Key Features 
- 
- 
- of ES6:
-<br>
-1.
- **Block-Scoped Variables**: 
-   - **`let`**: Declares variables that are limited in scope to the block, statement, or expression where they are used.
-   - **`const`**: Declares read-only named constants, which are block-scoped as well.
-
-   ```javascript
-   let x = 10;
-   const y = 20;
-   ```
-<br>
-
-<br>
-2. **Arrow Functions**: 
-   - Provides a concise way to write functions using the `=>` syntax. They inherit the `this` value from their enclosing context.
-
-   javascript
-   const add = (a, b) => a + b;
-   
-<br>
-<br>
-3. **Classes**: 
-   - Introduces a class-based syntax for object-oriented programming, including constructors and methods.
-
-   javascript
-   class Person {
-     constructor(name) {
-       this.name = name;
-     }
-
-     greet() {
-       return `Hello, ${this.name}`;
-     }
-   }
-
-   const john = new Person('John');
-   console.log(john.greet()); // Hello, John
-   
-<br>
-<br>
-4. **Template Literals**: 
-   - Allows embedding expressions inside string literals using backticks (`` ` ``) and `${}` syntax.
-<br>
-<br>
-   javascript
-   const name = 'John';
-   const message = `Hello, ${name}!`;
-   
-<br>
-<br>
-5. **Destructuring Assignment**: 
-   - Simplifies extracting values from arrays or properties from objects into distinct variables.
-
-   javascript
-   // Array Destructuring
-   const [a, b] = [1, 2];
-   
-   // Object Destructuring
-   const {name, age} = {name: 'John', age: 30};
-   <br>
-<br>
-6. **Default Parameters**: 
-   - Allows setting default values for function parameters.
-<br>
-   javascript
-   function greet(name = 'Guest') {
-     return `Hello, ${name}`;
-   }
-   
-<br>
-<br>
-7. **Rest and Spread Operators**: 
-   - **Rest**: Collects all remaining elements into an array.
-   - **Spread**: Expands an array or object into individual elements.
-
-  javascript
-   // Rest
-   function sum(...numbers) {
-     return numbers.reduce((acc, num) => acc + num, 0);
-   }
-
-   // Spread
-   const arr = [1, 2, 3];
-   const newArr = [...arr, 4, 5];
-   
-<br>
-<br>
-8. **Modules**: 
-   - Introduces a standardized module system, allowing the import and export of modules.
-
-   javascript
-   // Exporting a module
-   export const pi = 3.14;
-
-   // Importing a module
-   import {pi} from './math';
-   ```<br>
-<br>
-9. **Promises**: 
-   - Provides a way to handle asynchronous operations, making it easier to work with asynchronous code.
-
-   javascript
-   const promise = new Promise((resolve, reject) => {
-     // asynchronous operation
-     if (success) {
-       resolve('Operation succeeded');
-     } else {
-       reject('Operation failed');
-     }
-   });
-
-   promise.then(response => console.log(response)).catch(error => console.error(error));
-   
-<br>
-<br>
-10. **Enhanced Object Literals**: 
-    - Allows for more concise object creation, including shorthand property names, method definitions, and computed property names.
-
-    javascript
-    const name = 'John';
-    const person = {
-      name,
-      greet() {
-        return `Hello, ${this.name}`;
-      },
-      ['age' + 1]: 30
-    };
     
-
- Example:
-Here is an example that incorporates several ES6 features:
-
-javascript
-class Animal {
-  constructor(name, species) {
-    this.name = name;
-    this.species = species;
-  }
-
-  getInfo() {
-    return `${this.name} is a ${this.species}`;
-  }
-}
-
-const dog = new Animal('Rex', 'dog');
-
-const animals = ['cat', 'dog', 'bird'];
-const newAnimals = [...animals, 'fish'];
-
-const showAnimals = (first, ...rest) => {
-  console.log(`First: ${first}`);
-  console.log(`Rest: ${rest.join(', ')}`);
-};
-
-showAnimals(...newAnimals);
-
-const fetchData = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve('Data fetched'), 2000);
-  });
-};
-
-fetchData().then(data => console.log(data));
-```
-
-In this example, ES6 features such as classes, spread/rest operators, template literals, and promises are utilized to create a simple yet powerful script.    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    </p>
-                    <button class="read-more-button" onclick="readMore(this)">Learn</button>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Web Dev Hub. All rights reserved. created by web developers for web developers</p>
-        </div>
-    </footer>
-
+   
+    <h1 class="title"> 
+     Project OverSimplified
+     
+    </h1> 
     
-</body>
-</html>
-
-
+    
+    <h3 class="description">
+     css in a very simplified way from the basics to flexbox and grid box showing you the true power of CSS3 
+    </h3>
+    
+    <div class="container">
+    <button class="btn">
+    <a href="basic.html">
+    Learn the basics
+    </a>
+    </button></div>
+    
+    
+    
+     <h1 class="title">
+     Learn flexbox
+    </h1> 
+    
+    
+    <h3 class="description">
+      flexbox in a very simplified way from the basics to flexbox to a solid understanding of the true power of flexbox 
+    </h3>
+    
+    <div class="container">
+    <button class="btn"><a href="flex.html">Learn Flex-box
+    </a>
+    </button></div>
+    
+    
+    
+    
+     <h1 class="title">
+     
+     Learn css-grid
+     
+    </h1> 
+    
+    
+    <h3 class="description">
+     grid in a very simplified way from the basics to grid to a solid understanding of the true power of grid 
+    </h3>
+    
+    <div class="container">
+    <button class="btn">
+    <a href="Grid.html">
+    Learn grid
+    </a>
+    </button></div>
+    
+    

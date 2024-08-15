@@ -1,0 +1,243 @@
+ <link rel="stylesheet" href="OtherPage.css">
+ <script src="script.js"></script>
+ 
+ 
+ <div class="container2">
+ 
+ 
+ 
+                
+                 
+                    <p class="read-more-content">
+                    
+                    
+                    
+                    	1. Flex Container and Flex Items:
+   Flex Container: An element with display: flex or `display: inline-flex`.
+   - **Flex Items: The children of a flex container.
+
+**2. Main Axis and Cross Axis:**
+   - **Main Axis:** The primary axis along which flex items are laid out (default is horizontal).
+   - **Cross Axis:** The axis perpendicular to the main axis (default is vertical).
+
+
+**1. Basic Flex Container Setup:**
+  css
+   .container {
+     display: flex;
+   }
+
+                    
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ flex-container-setup
+ 
+ 
+ </button>
+ 
+ 
+ 
+ 
+ <p class="read-more-content">
+                    
+                **2. Align Items Along the Main Axis:**
+   - **`justify-content`** controls alignment along the main axis:
+     css
+     .container {
+       display: flex;
+       justify-content: center; 
+     }
+     
+     Other values include `flex-start`, `space-between`, `space-around`, and `space-evenly`.   
+                    
+                    	                
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-align-items
+ </button>
+ 
+ <p class="read-more-content">
+                    
+                    
+                    
+                    	**1. Flex Direction:**
+   - **`flex-direction`** defines the direction flex items are placed in the flex container:
+     css
+     .container {
+       display: flex;
+       flex-direction: row; /* Default value */
+     }
+                 
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-flex-dircetion
+ </button>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <p class="read-more-content">
+                    
+                    
+                    
+                    	**2. Flex Wrap:**
+   - ** flex-wrap specifies whether flex items should wrap onto multiple lines:
+     css
+     .container {
+       display: flex;
+       flex-wrap: nowrap; /* Default value */
+     }
+     
+            
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-Flex-wrap
+ </button>
+ 
+ 
+ 
+  <p class="read-more-content">
+                    
+                    
+                    
+                                
+        **1. Flexbox and Nested Flex Containers:**
+   - Flexbox can be applied to nested containers, allowing complex layouts:
+     css
+     .outer-container {
+       display: flex;
+       flex-direction: row;
+     }
+     .inner-container {
+       display: flex;
+       flex-direction: column;
+     }
+                   
+                 
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-flexbox-nested-containers
+ </button>
+ 
+ 
+ 
+ 
+ 
+ <p class="read-more-content">
+                    
+                    
+                    
+                                
+             **2. Aligning Content in a Multi-line Container:**
+   - **align-content** controls the alignment of multiple flex lines:
+     css
+     .container {
+       display: flex;
+       flex-wrap: wrap;
+       align-content: space-between; /* Other values: flex-start, center, flex-end, space-around, stretch */
+     }                     
+                              
+                   
+                 
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-flexbox-multi-Aline-Container
+ </button>
+ 
+ 
+ 
+ 
+ <p class="read-more-content">
+                    
+                    
+                    
+       **4. Using Flexbox in media queries:**
+   - Flexbox is highly usable for responsive designs. You can change flex properties using media queries:
+     
+     css
+     
+     @media (max-width: 600px) {
+       .container {
+         flex-direction: column;
+       }
+     }
+     
+                        
+                   
+                 
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-flexbox-mediaQueries
+ </button>
+ 
+ 
+ 
+ 
+  <p class="read-more-content">
+                    
+                    
+                    
+                                
+            **5. different Alignments:**
+   - Combine flex properties for more nuanced layouts:
+     
+     
+     css
+     .container {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       flex-wrap: wrap;
+     }
+          
+             </p>       
+                
+ <button class="btn"onclick="readMore(this)"
+ >
+ 
+ 
+ CSS-different-Flexbox-alignments
+ </button>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ </div>

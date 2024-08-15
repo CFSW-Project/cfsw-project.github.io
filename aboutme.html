@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            background-color:black;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation-name: fadein;
+            animation-play-state: running;
+            animation-iteration-count: 1;
+            animation-duration: 1s;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff9900;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        
+        
+        @keyframes fadein {
+    0% {
+        transform: translateX(-800px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About OSP</h1>
+        <p>
+       **About OverSimplified**
+
+Welcome to OverSimplified! Our mission is to make CSS accessible and understandable for everyone. Whether you're just starting out or looking to refine your skills, we've got you covered.
+
+**Project OverSimplified** is designed to guide you through CSS from the basics to advanced concepts like Flexbox and CSS Grid. Our approach breaks down complex topics into easy-to-digest lessons, helping you grasp the full potential of CSS3.
+
+Explore our structured learning paths:
+- **Basics of CSS**: Start with foundational concepts and gradually build your skills.
+- **Flexbox**: Master the art of flexible layouts and create responsive designs with ease.
+- **CSS Grid**: Learn to build sophisticated grid-based layouts, enhancing your design capabilities.
+
+Dive into our tutorials and see how CSS can transform your web projects. Join us on this journey to simplify CSS and unlock its powerful features!
+        
+        </p>
+    </div>
+</body>
+</html>
