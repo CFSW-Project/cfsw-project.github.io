@@ -1,209 +1,216 @@
- <link rel="stylesheet" href="OtherPage.css">
- <script src="script.js"></script>
- 
- 
- <div class="container2">
- 
- 
- 
-                
-                 
-                    <p class="read-more-content">
-                    
-                    
-                    
-                    	1.	CSS background-color: This property sets the background color of an element. You can use color names, HEX codes, RGB, or other color formats.
+<link rel="stylesheet" href="OtherPage.css">
+<script src="script.js"></script>
 
-.example {
+<div class="container2">
+
+    <p class="read-more-content">
+        1. CSS background-color: This property sets the background color of an element. You can use color names, HEX codes, RGB, or other color formats.
+
+        .example {
+            background-color: lightblue;
+        }
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-background-color
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
+body {
   background-color: lightblue;
 }
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
 
-                    
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- css-background-color
- 
- 
- </button>
- 
- 
- 
- 
- <p class="read-more-content">
-                    
-                    
-                    
-                    	CSS margin: This property sets the space outside the border of an element. It can take one, two, three, or four values to specify margins for all sides or individual sides.
+    <p class="read-more-content">
+        CSS margin: This property sets the space outside the border of an element. It can take one, two, three, or four values to specify margins for all sides or individual sides.
 
+        .example {
+            margin: 20px; /* All sides will have 20px margin */
+        }
+        
+        .example {
+            margin: 10px 15px; /* Top and bottom margins are 10px, left and right margins are 15px */
+        }                      
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-margin
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
 .example {
-  margin: 20px; /* All sides will have 20px margin */
+  margin: 120px; /** moves element from orignail position **/
 }
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
 
-.example {
-  margin: 10px 15px; /* Top and bottom margins are 10px, left and right margins are 15px */
-}                      
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-margin
- </button>
- 
- <p class="read-more-content">
-                    
-                    
-                    
-                    	CSS padding: This property sets the space inside the border of an element, between the border and the content. It can also take one, two, three, or four values.
+    <p class="read-more-content">
+        CSS padding: This property sets the space inside the border of an element, between the border and the content. It can also take one, two, three, or four values.
 
+        .example {
+            padding: 15px; /* All sides will have 15px padding */
+        }
+
+        .example {
+            padding: 10px 20px; /* Top and bottom padding are 10px, left and right padding are 20px */
+        }                     
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-padding
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
 .example {
-  padding: 15px; /* All sides will have 15px padding */
+  padding: 15px;
 }
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
 
-.example {
-  padding: 10px 20px; /* Top and bottom padding are 10px, left and right padding are 20px */
-}                     
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-padding
- </button>
- 
- 
- 
- 
- 
- 
- 
- 
-  <p class="read-more-content">
-                    
-                    
-                    
-                    	4.	CSS height: This property sets the height of an element. It can be specified in various units like pixels, percentages, ems, etc.
+    <p class="read-more-content">
+        CSS height: This property sets the height of an element. It can be specified in various units like pixels, percentages, ems, etc.
 
+        .example {
+            height: 200px; /* Sets the height of the element to 200 pixels */
+        }                
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-height
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
 .example {
-  height: 200px; /* Sets the height of the element to 200 pixels */
-}                
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-height
- </button>
- 
- 
- 
-  <p class="read-more-content">
-                    
-                    
-                    
-                                
-        5.	CSS width: This property sets the width of an element. It can also be specified in pixels, percentages, ems, etc.
-
-.example {
-  width: 50%; /* Sets the width of the element to 50% of its parent container */
-}           
-                   
-                 
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-width
- </button>
- 
- 
- 
- 
- 
- <p class="read-more-content">
-                    
-                    
-                    
-                                
-             6.	CSS border-radius: This property rounds the corners of an element’s border box. It can be used to create circular or elliptical corners.
-
-.example {
-  border-radius: 10px; /* Rounds all corners with a radius of 10 pixels */
+  height: 200px;
+  background-color:black;
+  color:white;
 }
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
 
+    <p class="read-more-content">
+        CSS width: This property sets the width of an element. It can also be specified in pixels, percentages, ems, etc.
+
+        .example {
+            width: 50%; /* Sets the width of the element to 50% of its parent container */
+        }           
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-width
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
 .example {
-  border-radius: 50%; /* Creates a circle if the width and height are equal */
-}                    
-                              
-                   
-                 
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-border-radius
- </button>
- 
- 
- 
- 
- <p class="read-more-content">
-                    
-                    
-                    
-                                
-             7.	CSS margin-left
+background-color:blue;
+  width: 50%;/** used ro set the width off the div **/
+  height:100%;
+  color:white;
+}
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
 
-effectivley just adding on to margin however this time allowing you to move your elements to the left using pixel movments               
-                 
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-margin-left
- </button>
- 
- 
- 
- 
-  <p class="read-more-content">
-                    
-                    
-                    
-                                
-             8.	CSS margin-right
+    <p class="read-more-content">
+        CSS border-radius: This property rounds the corners of an element’s border box. It can be used to create circular or elliptical corners.
 
-effectivley just adding on to margin however this time allowing you to move your elements to the right using pixel movments               
-                 
-             </p>       
-                
- <button class="btn"onclick="readMore(this)"
- >
- 
- 
- CSS-margin-right
- </button>
- 
- 
- 
- 
- 
- 
- 
- 
- 
+        .example {
+            border-radius: 10px; /* Rounds all corners with a radius of 10 pixels */
+        }
 
- </div>
+        .example {
+            border-radius: 50%; /* Creates a circle if the width and height are equal */
+        }                    
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-border-radius
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
+.example {
+  border-radius: 100%;
+Width:100%;
+Height:100%;
+Background-color:black;
+Font-size:0px;
+font-color:white;
+}
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
+
+    <p class="read-more-content">
+        CSS margin-left: This property moves an element to the left by a specified amount using pixels or other units.
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-margin-left
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
+.example {
+  margin-left: 120px;
+}
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
+
+    <p class="read-more-content">
+        CSS margin-right: This property moves an element to the right by a specified amount using pixels or other units.
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-margin-right
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
+.example {
+  margin-right: 120px;
+}
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
+
+    <p class="read-more-content">
+        CSS shadows: This property applies a shadow effect to an element, giving it a 3D appearance or depth.
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        }
+    </p>       
+    <button class="btn" onclick="readMore(this)">
+        CSS-box-shadow
+    </button>
+    <button class="btn" onclick="tryItYourself(this)">Try it Yourself</button>
+    <div class="try-it-section" style="display:none;">
+        <textarea class="code-editor" rows="8">
+.example {
+  width: 100%;
+  height: 100px;
+  background-color: lightblue;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+        </textarea>
+        <button class="btn" onclick="runCode(this)">Run Code</button>
+        <iframe class="output-frame"></iframe>
+    </div>
+
+</div>
