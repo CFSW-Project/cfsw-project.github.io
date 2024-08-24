@@ -100,7 +100,7 @@ animation: test 5s infinite alternate;
     border: none;
 
     display: flex;
-    align-items: center; /* Ensures icon and text are centered vertically */
+    
 }
 
 .btn i {
