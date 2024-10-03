@@ -1,0 +1,148 @@
+/* Reset default styles for elements */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'PT Sans', sans-serif; /* Font selection */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Main container */
+.container {
+    max-width: 1300px; /* Limit the width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding */
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50; /* Dark blue-gray color for headings */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Large font size for main title */
+}
+
+h2 {
+    font-size: 2rem; /* Sub-heading */
+}
+
+/* Form control styles */
+.form-control {
+    background: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    padding: 30px; /* Add padding around the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 50px 0; /* Margin around form */
+}
+
+.form-control h1 {
+    border-bottom: 2px solid #3498db; /* Blue bottom border */
+    padding-bottom: 10px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
+}
+
+/* Input field styles */
+input, textarea {
+    width: 100%; /* Full width */
+    padding: 15px; /* Padding inside input */
+    margin-bottom: 15px; /* Space between fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Standard font size */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button styles */
+button {
+    background-color: #3498db; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 15px 30px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Standard font size */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* List styles */
+ul {
+    list-style: none; /* Remove bullets */
+    padding-left: 0; /* Remove padding */
+}
+
+li {
+    padding: 10px 0; /* Space between items */
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50; /* Dark footer background */
+    color: #fff; /* White text */
+    text-align: center; /* Centered text */
+    padding: 20px; /* Padding around footer */
+    position: relative; /* To allow for positioning elements */
+    margin-top: 50px; /* Space above footer */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-control {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Smaller font size for headings */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller sub-heading */
+    }
+
+    button {
+        width: 100%; /* Full-width buttons on small screens */
+    }
+
+	
+	}
+	
+	
+	
+	input{
+		
+		
+		width: 90%;
+	}

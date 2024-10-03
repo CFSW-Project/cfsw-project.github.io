@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Single Page App</title>
+    <link href="app.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <form id="registerForm" method="POST" name="registration" class="form-control">
+                <div>
+                    <h1>CREATE AN ACCOUNT</h1>
+                    <ul>
+                        <li>
+                            <label for="uName">Name</label>
+                            <input type="text" name="Name" id="uName" placeholder="Enter your name." required>
+                        </li>
+                        <li>
+                            <label for="uEmail">Email</label>
+                            <input type="email" name="Email" id="uEmail" placeholder="Enter your email id." oninput="emailExist(this)" required>
+                        </li>
+                        <li>
+                            <label for="uPassword">Password</label>
+                            <input type="password" name="Password" id="uPassword" placeholder="Enter your password." pattern=".{0}|.{6,}" required>
+                        </li>
+                        <li>
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" name="Confirm Password" id="confirmPassword" placeholder="Confirm Password." oninput="verifyPassword(this)" required>
+                        </li>
+                        <li>
+                            <button type="submit" id="submit">Submit</button>
+                            <br>
+                            <span>Already have an account? <a href="javascript:void(0);" onclick="showHide('logIn', 'registerForm')">Log in now</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            <form id="thankYou" class="form-control" style="display: none;">
+                <div style="text-align: center">
+                    <h1>Thank You!</h1>
+                    <p>You have successfully registered with us. You can <a href="javascript:void(0);" onclick="showHide('logIn', 'thankYou')">log in now</a>.</p>
+                </div>
+            </form>
+
+            <form id="logIn" method="POST" name="login" class="form-control" style="display: none;">
+                <div>
+                    <h1>LOGIN</h1>
+                    <ul>
+                        <li>
+                            <label for="uemailId">Email</label>
+                            <input type="email" name="email" id="uemailId" placeholder="Enter your email id." required>
+                        </li>
+                        <li>
+                            <label for="ePassword">Password</label>
+                            <input type="password" name="password" id="ePassword" placeholder="Enter your password." required>
+                        </li>
+                        <li>
+                            <button type="submit" id="login">Log in</button>
+                            <br>
+                            <span>Don't have an account? <a href="javascript:void(0);" onclick="showHide('registerForm', 'logIn')">Create one now</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
