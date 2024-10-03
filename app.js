@@ -1,3 +1,7 @@
+// Define static salts
+const STATIC_SALT_EMAIL = "staticSaltForEmail"; // Static salt for email
+const STATIC_SALT_PASSWORD = "staticSaltForPassword"; // Static salt for password
+
 // Import Firebase libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
@@ -19,19 +23,19 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Hashing password function
-async function hashPassword(password, salt) {
+// Hashing password function with static salt
+async function hashPassword(password) {
     const encoder = new TextEncoder();
-    const data = encoder.encode(password + salt);
+    const data = encoder.encode(password + STATIC_SALT_PASSWORD); // Use static password salt
     const hashBuffer = await crypto.subtle.digest('SHA-256', data);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Hashing email function
-async function hashEmail(email, salt) {
+// Hashing email function with static salt
+async function hashEmail(email) {
     const encoder = new TextEncoder();
-    const data = encoder.encode(email + salt);
+    const data = encoder.encode(email + STATIC_SALT_EMAIL); // Use static email salt
     const hashBuffer = await crypto.subtle.digest('SHA-256', data);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
@@ -52,7 +56,7 @@ function validateEmail(email) {
 
 // Check if the email already exists in Firestore
 async function emailExist(value) {
-    const hashedEmail = await hashEmail(value.value, "staticSaltForEmail"); // Use static salt
+    const hashedEmail = await hashEmail(value.value); // Use static salt for email
 
     // Check Firestore for existing hashed email
     const q = query(collection(db, "users"), where("email", "==", hashedEmail));
@@ -86,25 +90,23 @@ async function validateForm() {
         return;
     }
 
-    const salt = crypto.getRandomValues(new Uint8Array(16)).join(''); // Generate random salt for password
-    
-    // Hash the password with the random salt
-    const hashedPassword = await hashPassword(password, salt);
+    // Hash the password with the static salt
+    const hashedPassword = await hashPassword(password);
 
-    // Hash the email with a static salt for consistency
+    // Hash the email with the static salt for consistency
     const email = sanitizeInput(document.getElementById("uEmail").value);
     if (!validateEmail(email)) {
         alert('Invalid email format!');
         return;
     }
 
-    const hashedEmail = await hashEmail(email, "staticSaltForEmail"); // Static salt for email hashing
+    const hashedEmail = await hashEmail(email); // Static salt for email hashing
 
     const formData = {
         name: sanitizeInput(document.getElementById("uName").value),
         email: hashedEmail, // Hashed email stored
         password: hashedPassword, // Hashed password stored
-        salt: salt // Store the salt for password hashing
+        salt: STATIC_SALT_PASSWORD // Store the static salt for password hashing
     };
 
     try {
@@ -140,7 +142,7 @@ async function loginUser() {
     const loginPass = document.getElementById("ePassword").value;
 
     // Hash the login email with the same static salt used during registration
-    const hashedLoginEmail = await hashEmail(loginEmail, "staticSaltForEmail");
+    const hashedLoginEmail = await hashEmail(loginEmail);
 
     // Query Firestore to find the user by hashed email
     const q = query(collection(db, "users"), where("email", "==", hashedLoginEmail));
@@ -149,8 +151,8 @@ async function loginUser() {
     if (!querySnapshot.empty) {
         const user = querySnapshot.docs[0].data(); // Get user data
 
-        // Hash the login password with the same salt stored for the user
-        const hashedLoginPass = await hashPassword(loginPass, user.salt);
+        // Hash the login password with the same static salt
+        const hashedLoginPass = await hashPassword(loginPass);
         if (hashedLoginPass === user.password) {
             console.log("You have successfully logged in");
             localStorage.setItem('loggedInUser', sanitizeInput(user.name)); // Store the username safely
