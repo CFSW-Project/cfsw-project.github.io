@@ -9,7 +9,7 @@ body {
 .nav {
   display: flex;
   justify-content: right;
-  padding: 25px;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -109,7 +109,7 @@ body {
   .logo {
     font-size: 48px;
     align-items:center;
-		padding-top: 30px;
+		padding-top: 35px;
   }
 
   .nav {
