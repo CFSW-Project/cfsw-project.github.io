@@ -108,7 +108,8 @@ body {
 @media (min-width: 1000px) {
   .logo {
     font-size: 48px;
-   
+    align-items:center;
+		padding-top: 20px;
   }
 
   .nav {
@@ -130,6 +131,8 @@ body {
   .btn {
     font-size: 18px;
   }
+	
+	
 }
 
 @keyframes fadein {
