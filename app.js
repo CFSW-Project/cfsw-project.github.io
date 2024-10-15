@@ -4,7 +4,7 @@ const STATIC_SALT_PASSWORD = "staticSaltForPassword"; // Static salt for passwor
 
 // Import Firebase libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
 // Firebase configuration
@@ -90,16 +90,15 @@ async function validateForm() {
         return;
     }
 
-    // Hash the password with the static salt
-    const hashedPassword = await hashPassword(password);
-
-    // Hash the email with the static salt for consistency
+    // Sanitize and validate the email
     const email = sanitizeInput(document.getElementById("uEmail").value);
     if (!validateEmail(email)) {
         alert('Invalid email format!');
         return;
     }
 
+    // Hash the password with the static salt
+    const hashedPassword = await hashPassword(password);
     const hashedEmail = await hashEmail(email); // Static salt for email hashing
 
     const formData = {
@@ -114,8 +113,8 @@ async function validateForm() {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const userId = userCredential.user.uid; // Firebase user ID
 
-        // Store user data in Firestore
-        await addDoc(collection(db, "users"), {
+        // Store user data in Firestore using userId as document ID
+        await setDoc(doc(db, "users", userId), {
             userId: userId,
             ...formData
         });
