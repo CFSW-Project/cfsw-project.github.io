@@ -1,11 +1,7 @@
-// Define static salts
-const STATIC_SALT_EMAIL = "staticSaltForEmail"; // Static salt for email
-const STATIC_SALT_PASSWORD = "staticSaltForPassword"; // Static salt for password
-
 // Import Firebase libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getFirestore, collection, doc, setDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -23,24 +19,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Hashing password function with static salt
-async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password + STATIC_SALT_PASSWORD); // Use static password salt
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Hashing email function with static salt
-async function hashEmail(email) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(email + STATIC_SALT_EMAIL); // Use static email salt
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
 // Simple input sanitization to prevent XSS
 function sanitizeInput(input) {
     const element = document.createElement('div');
@@ -56,10 +34,10 @@ function validateEmail(email) {
 
 // Check if the email already exists in Firestore
 async function emailExist(value) {
-    const hashedEmail = await hashEmail(value.value); // Use static salt for email
+    const email = sanitizeInput(value.value); // Sanitize input before processing
 
-    // Check Firestore for existing hashed email
-    const q = query(collection(db, "users"), where("email", "==", hashedEmail));
+    // Check Firestore for existing email
+    const q = query(collection(db, "users"), where("email", "==", email));
     const querySnapshot = await getDocs(q);
     if (!querySnapshot.empty) {
         value.setCustomValidity('Email exists. Try another.');
@@ -97,15 +75,10 @@ async function validateForm() {
         return;
     }
 
-    // Hash the password with the static salt
-    const hashedPassword = await hashPassword(password);
-    const hashedEmail = await hashEmail(email); // Static salt for email hashing
-
     const formData = {
         name: sanitizeInput(document.getElementById("uName").value),
-        email: hashedEmail, // Hashed email stored
-        password: hashedPassword, // Hashed password stored
-        salt: STATIC_SALT_PASSWORD // Store the static salt for password hashing
+        email: email, // Store the plain email
+        password: password // Store the plain password for Firebase
     };
 
     try {
@@ -140,27 +113,18 @@ async function loginUser() {
     const loginEmail = sanitizeInput(document.getElementById("uemailId").value);
     const loginPass = document.getElementById("ePassword").value;
 
-    // Hash the login email with the same static salt used during registration
-    const hashedLoginEmail = await hashEmail(loginEmail);
+    // Attempt to log in with Firebase Authentication
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPass);
+        console.log("You have successfully logged in");
 
-    // Query Firestore to find the user by hashed email
-    const q = query(collection(db, "users"), where("email", "==", hashedLoginEmail));
-    const querySnapshot = await getDocs(q);
-
-    if (!querySnapshot.empty) {
-        const user = querySnapshot.docs[0].data(); // Get user data
-
-        // Hash the login password with the same static salt
-        const hashedLoginPass = await hashPassword(loginPass);
-        if (hashedLoginPass === user.password) {
-            console.log("You have successfully logged in");
-            localStorage.setItem('loggedInUser', sanitizeInput(user.name)); // Store the username safely
-            window.location.href = 'index.html'; // Redirect to home page
-        } else {
-            console.log("Invalid credentials");
-        }
-    } else {
-        console.log("No users registered.");
+        // Optionally, retrieve user information
+        const user = userCredential.user; // Get the user object
+        localStorage.setItem('loggedInUser', sanitizeInput(user.displayName || user.email)); // Store the username safely
+        window.location.href = 'index.html'; // Redirect to home page
+    } catch (error) {
+        console.error("Error during login: ", error.code, error.message); // Log the error message
+        alert("Invalid email or password.");
     }
 }
 
