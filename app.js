@@ -77,8 +77,7 @@ async function validateForm() {
 
     const formData = {
         name: sanitizeInput(document.getElementById("uName").value),
-        email: email, // Store the plain email
-        password: password // Store the plain password for Firebase
+        email: email // Store the plain email
     };
 
     try {
@@ -90,14 +89,31 @@ async function validateForm() {
         await setDoc(doc(db, "users", userId), {
             userId: userId,
             ...formData
+            // Do NOT store the password in Firestore
         });
 
         document.getElementById("registerForm").reset();
         document.getElementById("thankYou").style.display = "block";
         document.getElementById("registerForm").style.display = "none";
     } catch (e) {
-        console.error("Error during registration: ", e);
-        alert("Error during registration: " + e.message);
+        let errorMessage;
+        switch (e.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'This email is already in use. Please try another.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'Invalid email address.';
+                break;
+            case 'auth/operation-not-allowed':
+                errorMessage = 'Email/password accounts are not enabled. Please check your Firebase console.';
+                break;
+            case 'auth/weak-password':
+                errorMessage = 'Password should be at least 6 characters.';
+                break;
+            default:
+                errorMessage = 'Registration failed. Please try again.';
+        }
+        alert(errorMessage);
     }
 }
 
@@ -123,8 +139,22 @@ async function loginUser() {
         localStorage.setItem('loggedInUser', sanitizeInput(user.displayName || user.email)); // Store the username safely
         window.location.href = 'index.html'; // Redirect to home page
     } catch (error) {
-        console.error("Error during login: ", error.code, error.message); // Log the error message
-        alert("Invalid email or password.");
+        let errorMessage;
+        switch (error.code) {
+            case 'auth/user-not-found':
+                errorMessage = 'No user found with this email.';
+                break;
+            case 'auth/wrong-password':
+                errorMessage = 'Incorrect password. Please try again.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'Invalid email address.';
+                break;
+            default:
+                errorMessage = 'Login failed. Please try again.';
+        }
+        alert(errorMessage);
+        console.error("Error during login: ", error.code); // Log the error code
     }
 }
 

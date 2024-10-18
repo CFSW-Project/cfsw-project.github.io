@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Single Page App</title>
-    <link href="app.css" rel="stylesheet" type="text/css">
+    <link href="css-2/app.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,6 +30,10 @@
                         <li>
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" name="Confirm Password" id="confirmPassword" placeholder="Confirm Password." oninput="verifyPassword(this)" required>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="tos" required>
+                            <label for="tos">I have read and agree to the <a href="tos.html" target="_blank">Terms of Service</a></label>
                         </li>
                         <li>
                             <button type="submit" id="submit">Submit</button>
@@ -69,6 +73,6 @@
         </div>
     </main>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="jss/app.js"></script>
 </body>
 </html>
