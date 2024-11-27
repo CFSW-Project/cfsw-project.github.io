@@ -121,6 +121,7 @@ body {
   }
 
   .title {
+    margin-top: 60px;
     font-size: 36px;
   }
 
@@ -132,6 +133,9 @@ body {
     font-size: 18px;
   }
 	
+  .logo{
+    margin-top: -105px;
+  }
 	
 }
 
