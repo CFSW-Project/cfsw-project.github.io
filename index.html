@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="style.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-	 <script src="app.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 <ul class="nav">
   <li class="item"><a href="https://github.com/CFSW-Project/csfw.gitHub.io">Git Repo</a></li>
   <li class="item"><a href="https://github.com/CFSW-Project">My GitHub</a></li>
@@ -8,99 +8,75 @@
   <li class="item"><a href="https://github.com/CFSW-Project?tab=repositories">Other Projects</a></li>
 </ul>
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <h1 class="logo">OverSimplified</h1>
-<div class="wrapped">
 <h1 class="title">Project OverSimplified</h1>
 
 <div class="wrapper">
-  <h3 class="description">
-    CSS in a very simplified way from the basics to Flexbox and Grid, showing you the true power of CSS3.
-  </h3>
 
-  <div class="container">
-    <button class="btn">
-			<i class="fa-brands fa-css3"></i>
-			
-    <a href="basic.html">Learn the Basics</a>
-			
-			
-    </button>
+  <div class="content-pair">
+    <div class="content-text">
+      <h1 class="title">Learn  the basics</h1>
+      <h3 class="description">
+        CSS in a very simplified way from the basics to Flexbox and Grid, showing you the true power of CSS3.
+      </h3>
+    </div>
+    <div class="container">
+      <button class="btn">
+        <i class="fa-brands fa-css3"></i>
+        <a href="basic.html">Learn the Basics</a>
+      </button>
+    </div>
   </div>
 
-  <h1 class="title">
-	
-	Learn Flexbox</h1>
-  <h3 class="description">
-    Flexbox in a very simplified way, leading to a solid understanding of its true power.
-  </h3>
-
-  <div class="container">
-    <button class="btn">
-			<i class="fa-solid fa-box"></i>
-	
-    <a href="flex.html">Learn Flexbox</a></button>
+  <div class="content-pair">
+    <div class="content-text">
+      <h1 class="title">Learn Flexbox</h1>
+      <h3 class="description">
+        Flexbox in a very simplified way, leading to a solid understanding of its true power.
+      </h3>
+    </div>
+    <div class="container">
+      <button class="btn">
+        <i class="fa-solid fa-box"></i>
+        <a href="flex.html">Learn Flexbox</a>
+      </button>
+    </div>
   </div>
 
-  <h1 class="title">Learn CSS Grid</h1>
-  <h3 class="description">
-    Grid in a very simplified way, leading to a solid understanding of its true power.
-  </h3>
+  <!-- Third content pair: CSS Grid -->
+  <div class="content-pair">
+    <div class="content-text">
+      <h1 class="title">Learn CSS Grid</h1>
+      <h3 class="description">
+        Grid in a very simplified way, leading to a solid understanding of its true power.
+      </h3>
+    </div>
+    <div class="container">
+      <button class="btn">
+        <i class="fas fa-border-all"></i>
+        <a href="Grid.html">Learn Grid</a>
+      </button>
+    </div>
+  </div>
 
-  <div class="container">
-		<i class="fa-solid fa-grid-round-2-plus"></i>
-    <button class="btn">
-	<i class="fas fa-border-all"></i>
-    <a href="Grid.html">Learn Grid</a>
-    </button>
-	</div>
-	
-	<!-- Username display -->
-            <!-- Display username will be set by JavaScript -->
-						<br>
-		<br>
-        </li>
-    </ul>
-    <button id="logout-btn" class="btn">Log Out</button>
-		<br>
-		<br>
-		<li class="username" id="username-display">
-    
-</div>
+  <!-- User section in its own container -->
+  <div class="content-pair">
+    <div class="content-text">
+      <li class="username" id="username-display"></li>
+    </div>
+    <div class="container">
+      <button id="logout-btn" class="btn">Log Out</button>
+    </div>
+  </div>
 </div>
 
 <style>
-.username{list-style-type: none;
-	
-	color: white;
-	font-family: sans-serif;
-	font-size: 30px;}	
+.username {
+  list-style-type: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+}	
 </style>
-
-
-
-
-
-
-
-   
-    <script>
-        // Retrieve the logged-in username from localStorage
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        const usernameDisplay = document.getElementById('username-display');
-
-        if (loggedInUser) {
-            usernameDisplay.textContent = `Logged in as: ${loggedInUser}`; // Corrected this line
-        } else {
-            // If no user is logged in, redirect back to login page
-            window.location.href = 'index2.html';  // Change to your login page URL
-        }
-
-        // Handle logout
-        const logoutBtn = document.getElementById('logout-btn');
-        logoutBtn.addEventListener('click', function() {
-            // Remove the logged-in user from localStorage
-            localStorage.removeItem('loggedInUser');
-            // Redirect to the login page
-            window.location.href = 'index2.html';  // Change to your login page URL
-        });
-    </script>
