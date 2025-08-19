@@ -237,7 +237,7 @@ a {
 }
 
 /* Tablet/Medium screens - between 480px and 767px */
-@media (min-width: 480px) and (max-width: 800px) {
+@media (min-width: 480px) and (max-width: 1024px) {
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -247,8 +247,8 @@ a {
 
   .logo {
     font-size: 24px;
-    margin-top: -800000%;
-    margin-left: -30%;
+   margin-top: -8%;
+    margin-left: -60%;
   }
 
   .nav {
