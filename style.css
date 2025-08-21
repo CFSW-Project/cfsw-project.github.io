@@ -76,12 +76,13 @@ body {
   padding: 30px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 8px 32px, rgba(255, 255, 255, 0.1) 0 1px 0 inset;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-pair:hover {
-  transform: translateY(-5px);
-  box-shadow: rgba(0, 0, 0, 0.15) 0 12px 40px, rgba(255, 255, 255, 0.1) 0 1px 0 inset;
+
+    transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .content-text {
