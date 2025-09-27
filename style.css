@@ -331,3 +331,46 @@ a {
     padding: 0 15px;
   }
 }
+
+
+    
+
+    /* Portrait*/
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px){
+      
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fadein 2s;
+}
+
+.logo{
+  margin-top: -6.5%;
+}
+     
+}
+
+
+
+    /* Portrait*/
+    @media only screen and (min-device-width: 820px) and (max-device-width: 1180px){
+      
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fadein 2s;
+}
+     
+}
